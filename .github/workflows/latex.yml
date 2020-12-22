@@ -11,3 +11,4 @@ jobs:
         uses: dante-ev/latex-action@master
         with:
           root_file: RE4B-FR.tex
+          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode 
