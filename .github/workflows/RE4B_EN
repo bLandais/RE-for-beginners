@@ -1,0 +1,19 @@
+name: Build RE4B English version
+
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Compile LaTeX document
+        uses: dante-ev/latex-action@master
+        with:
+          root_file: RE4B-EN.tex
+          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode 
+      - name: Upload PDF file as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: RE4B-EN
+          path: RE4B-EN.pdf
