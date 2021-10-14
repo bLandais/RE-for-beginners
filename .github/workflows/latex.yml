@@ -17,3 +17,5 @@ jobs:
         with:
           name: PDF
           path: RE4B-FR.pdf
+      - name: GitHub Releases
+        uses: fnkr/github-action-ghr@v1.3
